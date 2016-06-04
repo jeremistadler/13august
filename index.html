@@ -14,6 +14,9 @@
   <style>
     body, html, p{
       font-family: 'Dancing Script', system, -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Lucida Grande", cursive;
+
+      margin: 0;
+      padding: 0;
     }
 
     html {
@@ -31,8 +34,124 @@
       font-size: 32px;
       font-weight: 700;
       line-height: 1.6em;
+      color: white;
     }
+
+
+    .flower{
+      position: absolute;
+      left: 0;
+      top: 0;
+    }
+
+    .leaf {
+      width: 30px;
+      height: 30px;
+      position: absolute;
+      -webkit-filter: invert();
+    }
+
+    @keyframes fadeinLeft {
+        from { opacity: 0; transform: translate(0, -10px) scale(0) rotate(-90deg); }
+        to   { opacity: 1; transform: translate(0, -10px)scale(1) rotate(-90deg); }
+    }
+
+    @keyframes fadeinRight {
+        from { opacity: 0; transform: scale(0) rotate(90deg); }
+        to   { opacity: 1; transform: scale(1) rotate(90deg); }
+    }
+
+    @keyframes fadeinRight1 {
+        from { opacity: 0; transform: scale(0) rotate(90deg); }
+        40%  { opacity: 0.2; transform: scale(0) rotate(90deg); }
+        to   { opacity: 1; transform: scale(1) rotate(90deg); }
+    }
+
+    @keyframes fadeinLeft1 {
+        from { opacity: 0; transform: scale(0) rotate(90deg); }
+        40%  { opacity: 0.2; transform: scale(0) rotate(90deg); }
+        to   { opacity: 1; transform: scale(1) rotate(90deg); }
+    }
+
+    .leaf1{
+      top: 10px;
+      left: 40px;
+      transform: translate(0, -10px) rotate(-90deg);
+      animation: fadeinLeft 2s;
+    }
+    .leaf2{
+      top: 80px;
+      left: 50px;
+      transform: translate(0, -10px) rotate(-90deg);
+      animation: fadeinLeft 3s;
+    }
+    .leaf3{
+      top: 160px;
+      left: 30px;
+      transform: rotate(-90deg);
+      animation: fadeinLeft1 4s;
+    }
+
+    .leaf4{
+      top: 130px;
+      left: 80px;
+      transform: rotate(90deg);
+      animation: fadeinRight 2s;
+    }
+    .leaf5{
+      top: 130px;
+      left: 95px;
+      transform: rotate(90deg);
+      animation: fadeinRight 3s;
+    }
+    .leaf6{
+      top: 130px;
+      left: 70px;
+      transform: rotate(90deg);
+      animation: fadeinRight1 4.5s;
+    }
+
+
+      @keyframes op2 {
+        from { transform: scale(0); }
+        to   { transform: scale(1);  }
+      }
+
+    svg {
+        /*animation: op2 5s ease forwards;*/
+        transform-origin: 0% 0% 0;
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+      }
+
+    @keyframes op {
+      from { opacity: 0; }
+      to   { opacity: 1; }
+    }
+
+    .path {
+      stroke-dasharray: 300;
+      stroke-dashoffset: 300;
+      animation: dash 5s ease forwards;
+    }
+
+    .svgleaf {
+      /*stroke-dasharray: 0;
+      stroke-dashoffset: 0;
+      animation: op 10s ease forwards;*/
+    }
+
+    @keyframes dash {
+      to {
+        stroke-dashoffset: 0;
+      }
+    }
+
   </style>
+
+
 
   <link href='https://fonts.googleapis.com/css?family=Dancing+Script:400,700' rel='stylesheet' type='text/css'>
 </head>
@@ -40,6 +159,23 @@
   <p class="wedding-text">
     Du är bjuden till <br>Jeremi &amp; Johannas bröllop <br> Den 13 Augusti
   </p>
+
+
+  <svg height="224px" viewBox="-9 3 378 224" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+      <!-- Generator: Sketch 3.8.1 (29687) - http://www.bohemiancoding.com/sketch -->
+      <desc>Created with Sketch.</desc>
+      <defs></defs>
+      <path d="M-7.58567001,4.56822071 C-6.71464792,5.32194516 -5.84362583,6.07566961 -4.97260374,6.82939406 L-7.58567001,4.56822071 Z" class="svgleaf path" stroke="#FFFFFF" stroke-width="2" fill="none"></path>
+      <path d="M3.37875608,6.21967859 C25.3601181,25.750096 43.8823368,42.542007 32.7043279,75.5739416 C29.2298294,85.8413701 23.9472374,95.5160991 21.3043907,106.028358 C17.2820808,122.027608 24.2961606,150.921679 44.0171628,152.844053 C52.8848413,153.708462 51.6082554,136.977482 44.2784694,140.315272" class="svgleaf path" id="Path-2" stroke="#FFFFFF" stroke-width="2" fill="none"></path>
+      <path d="M30.7915634,81.5770259 C20.0887131,104.609734 10.6318115,125.35933 18.1721953,151.192596 C25.2482013,175.434908 30.8418494,178.01372 34.9655012,200.182362 C37.0209531,211.232416 36.9110533,228.258017 20.172062,225.417614 C14.3301077,224.426306 11.3402491,208.885615 20.0884439,208.885615" class="svgleaf path" id="Path-3" stroke="#FFFFFF" stroke-width="2" fill="none"></path>
+      <path d="M7.12066699,12.5746558 C26.6361306,27.9674188 32.1125401,34.9036493 57.3298645,35.2839438 C68.357405,35.4502466 96.7549155,27.3120279 106.842244,37.8935259 C114.077386,45.4831114 113.514907,67.4021931 98.748707,64.78372 C88.2743042,62.9263062 96.6964391,45.0062127 100.926262,54.8645204" class="svgleaf path" id="Path-4" stroke="#FFFFFF" stroke-width="2" fill="none"></path>
+      <path d="M9.46894255,12.5746558 C31.8576829,22.4907499 30.9711519,24.3139827 57.6782733,25.713153 C82.7750727,27.0279595 103.709687,11.6357031 129.729221,14.6616247 C152.101216,17.2633586 144.43607,42.8782589 158.18377,53.2966806 C162.288558,56.4074125 172.626043,59.5910562 176.544916,54.0806005 C182.756015,45.3469717 171.148063,43.1467694 171.148063,49.2934631" class="svgleaf path" id="Path-5" stroke="#FFFFFF" stroke-width="2" fill="none"></path>
+      <path d="M363.2816,7.78751836 C363.467577,11.0383896 349.277462,34.8395605 347.969032,46.8580853 C347.400777,52.0777653 347.329469,57.3982257 347.969032,62.6096488 C349.909126,78.4183313 364.714735,111.658233 339.439984,118.909033 C338.073306,119.301104 336.472697,119.578116 335.17546,118.996135 C329.748477,116.561422 317.696118,103.308015 325.778873,96.6317717 C329.855537,93.2645043 333.164689,96.348514 331.694855,100.199478" class="svgleaf path" id="Path-6" stroke="#FFFFFF" stroke-width="2" fill="none"></path>
+      <path d="M367.633227,9.35187404 C330.168784,38.0724861 372.602716,95.2389295 358.23664,133.702472 C352.701925,148.521046 335.228466,170.869703 342.572179,190.088958 C346.101446,199.325413 359.203172,187.678259 350.056001,185.388923" id="Path-7" stroke="#FFFFFF" stroke-width="2" class="svgleaf path" fill="none"></path>
+      <path d="M365.981769,11.4423271 C357.641272,22.5011536 355.10773,29.4646548 342.397975,34.8484327 C329.811164,40.1801318 315.024457,30.691916 301.937256,30.4131882 C281.813264,29.9845926 265.07761,51.1336819 269.911516,70.3512932 C273.006684,82.6563982 294.184719,70.6399376 281.485658,62.6096488" id="Path-8" stroke="#FFFFFF" stroke-width="2" class="svgleaf path" fill="none"></path>
+      <path d="M361.54304,16.3165667 C334.962849,42.5722927 297.148073,12.2900609 264.169739,22.1454465 C245.547678,27.7105422 239.486744,44.4876278 220.13783,50.3386896 C216.966996,51.2975417 213.465529,50.3856585 210.21863,49.7289741 C208.221616,49.3250786 206.210129,48.5181689 204.651057,47.2064942 C202.994179,45.8125336 200.630359,44.0439859 200.909146,41.8967435 C202.848951,26.9561924 216.572844,29.1268767 212.57039,35.806557" class="svgleaf path" id="Path-9" stroke="#FFFFFF" stroke-width="2" fill="none"></path>
+  </svg>
+
 
   <script>
     (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
