@@ -23,28 +23,26 @@
       width: 100%;
     }
 
-
-    @media only screen and (min-width : 600px) {
-      #bg {
-        width: auto;
-        height: 900px;
-        margin: auto;
-        display: block;
-        margin-top: 50px;
-      }
+    #seed-wrapper-container {
+      position: absolute;
+      left: 45%;
+      top: 85%;
+      height: 100%;
+      width: 100%;
     }
 
     #seed-container {
-      position: absolute;
-      left: 40%;
-      top: 75%;
+      position: relative;
+      height: 100%;
+      width: 100%;
     }
 
     .seed {
       position: absolute;
-      top: 165px;
-      left: 43%;
+      top: 0;
+      left: 0;
       opacity: 0;
+      transform-origin: 50% 0%;
     }
 
     @media only screen and (min-width : 600px) {
@@ -56,11 +54,13 @@
         margin-top: 50px;
       }
 
-      .seed {
+      #seed-wrapper-container {
         position: absolute;
-        top: 75%;
-        left: 40%;
-        opacity: 0;
+        width: auto;
+        height: 900px;
+        margin: auto;
+        display: block;
+        margin-top: 50px;
       }
     }
 
@@ -99,7 +99,9 @@
     <path d="M116.416206,383.803284 L117.38321,382.353602 C117.38321,382.353602 114.669292,383.920209 114.386084,384.09708 C112.261329,385.424051 108.191826,386.401921 107.859835,386.027916 C107.527844,385.653911 109.696674,384.293689 112.261329,382.973757 C114.825983,381.653824 117.41965,381.239549 117.726991,380.949658 C118.034331,380.659767 113.64225,381.661706 113.774441,381.546554 C113.973139,381.37347 114.177177,381.201209 114.386084,381.030942 C114.772665,380.715862 117.726991,380.384251 117.726991,380.384251 C117.726991,380.384251 116.136594,379.740108 116.416206,379.56425 C116.842704,379.296011 117.280583,379.046204 117.726991,378.821899 C118.786956,378.289302 119.951764,377.896572 121.098134,377.607 C121.376876,377.53659 119.443961,379.69926 119.443961,379.69926 L122.518117,377.228352 L124.37081,376.686058 L119.76955,379.69926 L127.800604,376.398666 C127.800604,376.398666 129.625543,375.992138 129.481902,376.053736 C126.626211,377.278352 119.944283,379.917782 119.944283,379.917782 L129.749403,377.048099 L128.48502,377.708014 L119.944283,380.176816 L124.725038,379.205084 L122.644077,380.949658 L119.769551,380.949658 L120.131445,381.742737 L128.48502,392.569795 C128.48502,392.569795 130.988907,394.204112 132.155753,395.937905 C133.3226,397.671698 134,401.593681 134,401.593681 C134,401.593681 131.476642,399.942893 129.749404,397.819071 C128.022166,395.69525 127.599706,393.574723 127.599706,393.574723 L119.127832,382.521153 L116.416206,383.803284 Z" id="Path-39" stroke="none" fill="#FFFFFF" fill-rule="evenodd"></path>
   </svg>
 
-  <div id="seed-container"></div>
+  <div id="seed-wrapper-container">
+    <div id="seed-container"></div>
+  </div>
 
   <div>
     <p style="text-align: center; padding: 30px; font-size: 30px;">Info</p>
@@ -150,15 +152,16 @@
 
     seeds.push({
       bornAt: time,
-      diesAt: time + 1000 * 5,
+      diesAt: time + 1000 * 10,
       elm: newElm,
       startX: Math.random() * 10,
       startY: Math.random() * 10,
-      endX: (Math.random() - 0.5) * 100 + 100,
-      endY: (Math.random() - 0.5) * 100 + 80,
+      endX: (Math.random() - 0.5) * 200 + 300,
+      endY: (Math.random() - 0.5) * 200 + 180,
       randomSeed: Math.random(),
+      scale: Math.random() * 2 + 0.2,
     })
-  }, 400);
+  }, 800);
 
   function update(timestamp) {
     for (var i = 0; i < seeds.length; i++) {
@@ -177,7 +180,7 @@
       var rot = 5 - Math.sin(h * 10 + seed.randomSeed * 5) * 10;
 
       seed.elm.style.opacity = bezier(h, 0, 2, 2, -1);
-      seed.elm.style.transform = 'translate(' + x + 'px,' + y + 'px) rotate(' + rot + 'deg)';
+      seed.elm.style.transform = 'translate(' + x + 'px,' + y + 'px) rotate(' + rot + 'deg) scale(' + seed.scale + ')';
     }
 
     window.requestAnimationFrame(update);
