@@ -32,62 +32,6 @@
     }
 
 
-    @keyframes scaleDown {
-      from { transform: scale(0.5); }
-      to   { transform: scale(1);  }
-    }
-
-    @keyframes leaf {
-      50% { stroke-dashoffset: 0; }
-      to   { stroke-dashoffset: 0;  }
-    }
-
-    @keyframes fadeIn {
-      from { opacity: 0; }
-      to   { opacity: 1; }
-    }
-
-    @keyframes dash {
-      to {
-        stroke-dashoffset: 0;
-      }
-    }
-
-    .absolute--right {
-      position: absolute;
-      top: 0;
-      right: 0;
-    }
-
-    .absolute--left {
-      position: absolute;
-      top: 0;
-      left: 0;
-    }
-
-    .scaleDown {
-      animation: scaleDown 5s ease forwards;
-      transform-origin: 0% 0% 0;
-    }
-
-    .animate--dash {
-      stroke-dasharray: 300;
-      stroke-dashoffset: 300;
-      animation: dash 5s ease forwards;
-    }
-
-    .animate--fade {
-      animation: fadeIn 5s ease forwards;
-    }
-
-    .animate--leaf {
-      stroke-dasharray: 100;
-      stroke-dashoffset: 100;
-      transform-origin: 50% 50%;
-      animation: leaf 10s ease forwards;
-    }
-
-
     @keyframes abc {
       from {
         transform: translate(0px, 0px) scale(0) rotate(0deg) ;
@@ -113,8 +57,6 @@
     }
 
   </style>
-
-
 
   <link href='https://fonts.googleapis.com/css?family=Dancing+Script:400,700' rel='stylesheet' type='text/css'>
 </head>
