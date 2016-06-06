@@ -68,10 +68,10 @@
     }
 
     .seed {
-      animation-duration: 10s;
       position: absolute;
       top: 75%;
       left: 40%;
+      opacity: 0;
     }
 
   </style>
@@ -81,16 +81,17 @@
 <body>
   <img id="bg" src="bg.jpg" />
 
-  <svg class="seed-1" width="22px" height="36px" viewBox="167 398 22 36" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <svg class="seed" width="22px" height="36px" viewBox="167 398 22 36" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
       <path d="M179.760006,424.918569 C179.760006,426.013114 180.005563,427.576685 180.598093,429.637445 C181.190624,431.698206 182.260201,433.191608 182.260201,433.191608 C182.260201,433.191608 182.808326,431.486824 183.017744,429.171905 C183.227161,426.856986 182.992465,426.211476 182.260202,424.062327 C181.527938,421.913177 180.989814,420.840501 180.989814,420.840501 L178.043793,399.584239 L188.219335,398.003289 C188.219335,398.003289 183.335071,397.924021 177.881478,398.543799 C172.427884,399.163576 167,400.414776 167,400.414776 L177.24703,399.584239 L180.226317,420.840502 C180.226317,420.840502 179.760006,423.824023 179.760006,424.918569 Z" fill="#FFFFFF"></path>
   </svg>
 
   <div id="seed-container"></div>
 
   <div>
-
     <p style="text-align: center; padding: 30px; font-size: 30px;">Info</p>
     <p style="text-align: center; padding: 30px; font-size: 20px;">Test test test test test</p>
+
+    <p style="text-align: center; color: #777; padding: 10px; font-size: 13px;">Skapad med &#9825; av Johanna och Jeremi</p>
 
   </div>
 
@@ -107,7 +108,15 @@
   <script>
 
   var seedContainer = document.getElementById('seed-container');
-  var svgElm = document.getElementsByClassName('seed-1')[0];
+  var svgElm = document.getElementsByClassName('seed')[0];
+
+  bezier = function(t, p0, p1, p2, p3){
+    var cX = 3 * (p1 - p0),
+        bX = 3 * (p2 - p1) - cX,
+        aX = p3 - p0 - cX - bX;
+
+    return (aX * Math.pow(t, 3)) + (bX * Math.pow(t, 2)) + (cX * t) + p0;
+  }
 
   var seeds = [];
 
@@ -119,8 +128,12 @@
 
     seeds.push({
       bornAt: time,
-      diesAt: time + 1000 * 2,
+      diesAt: time + 1000 * 5,
       elm: newElm,
+      startX: Math.random() * 10,
+      startY: Math.random() * 10,
+      endX: (Math.random() - 0.5) * 100 + 100,
+      endY: (Math.random() - 0.5) * 100 + 10,
     })
   }, 400);
 
@@ -135,7 +148,12 @@
         continue;
       }
 
-      
+      var h = (timestamp - seed.bornAt) / (seed.diesAt - seed.bornAt);
+      var x = seed.startX + seed.endX * h;
+      var y = seed.startY + seed.endY * h;
+
+      seed.elm.style.opacity = bezier(h, 0, 1, 1, 0);
+      seed.elm.style.transform = 'translate(' + x + 'px,' + y + 'px)'
     }
 
     window.requestAnimationFrame(update);
