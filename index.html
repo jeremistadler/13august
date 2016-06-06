@@ -20,17 +20,35 @@
     }
 
     #bg {
-      position: fixed;
-      top: 0;
-      left: 0;
-      right: 0;
-      height: 1000px;
       width: 100%;
-
-      background: url('bg.jpg') no-repeat;
-      background-size: cover;
     }
 
+
+    @media only screen and (min-width : 600px) {
+      #bg {
+        width: auto;
+        height: 900px;
+        margin: auto;
+        display: block;
+        margin-top: 50px;
+      }
+    }
+
+    #seed-container {
+      position: absolute;
+      left: 40%;
+      top: 75%;
+    }
+
+    @media only screen and (min-width : 600px) {
+      #bg {
+        width: auto;
+        height: 900px;
+        margin: auto;
+        display: block;
+        margin-top: 50px;
+      }
+    }
 
     @keyframes abc {
       from {
@@ -61,13 +79,20 @@
   <link href='https://fonts.googleapis.com/css?family=Dancing+Script:400,700' rel='stylesheet' type='text/css'>
 </head>
 <body>
-  <div id="bg"></div>
+  <img id="bg" src="bg.jpg" />
 
   <svg class="seed-1" width="22px" height="36px" viewBox="167 398 22 36" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
       <path d="M179.760006,424.918569 C179.760006,426.013114 180.005563,427.576685 180.598093,429.637445 C181.190624,431.698206 182.260201,433.191608 182.260201,433.191608 C182.260201,433.191608 182.808326,431.486824 183.017744,429.171905 C183.227161,426.856986 182.992465,426.211476 182.260202,424.062327 C181.527938,421.913177 180.989814,420.840501 180.989814,420.840501 L178.043793,399.584239 L188.219335,398.003289 C188.219335,398.003289 183.335071,397.924021 177.881478,398.543799 C172.427884,399.163576 167,400.414776 167,400.414776 L177.24703,399.584239 L180.226317,420.840502 C180.226317,420.840502 179.760006,423.824023 179.760006,424.918569 Z" fill="#FFFFFF"></path>
   </svg>
 
   <div id="seed-container"></div>
+
+  <div>
+
+    <p style="text-align: center; padding: 30px; font-size: 30px;">Info</p>
+    <p style="text-align: center; padding: 30px; font-size: 20px;">Test test test test test</p>
+
+  </div>
 
   <script>
     (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
@@ -84,16 +109,39 @@
   var seedContainer = document.getElementById('seed-container');
   var svgElm = document.getElementsByClassName('seed-1')[0];
 
+  var seeds = [];
+
   setInterval(() => {
     var newElm = svgElm.cloneNode(true);
-    newElm.classList.add('seed');
     seedContainer.appendChild(newElm);
 
-    window.setTimeout(() => {
-      newElm.parentElement.removeChild(newElm);
-    }, 10000)
+    var time = performance.now();
 
+    seeds.push({
+      bornAt: time,
+      diesAt: time + 1000 * 2,
+      elm: newElm,
+    })
   }, 400);
+
+  function update(timestamp) {
+    for (var i = 0; i < seeds.length; i++) {
+      var seed = seeds[i];
+
+      if (seed.diesAt < timestamp) {
+        seed.elm.parentElement.removeChild(seed.elm);
+        seeds.splice(i, 1);
+        i--;
+        continue;
+      }
+
+      
+    }
+
+    window.requestAnimationFrame(update);
+  }
+
+  window.requestAnimationFrame(update);
 
   </script>
 </body>
