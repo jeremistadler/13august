@@ -1,0 +1,16 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+BEGIN:VEVENT
+UID:51534a077d583
+URL:http://www.13augusti.se
+DTSTART:20160813T110000Z
+SEQUENCE:0
+TRANSP:OPAQUE
+DTEND:20160813T170000Z
+LOCATION:Riseberga Amfiteater
+SUMMARY:Johanna och Jeremi bröllop
+CLASS:PUBLIC
+DESCRIPTION:Johanna och Jeremi ska gifta sig vid Anfiteatern som ligger brevid Riseberga klosterruin.
+DTSTAMP:20160604T215415Z
+END:VEVENT
+END:VCALENDAR
