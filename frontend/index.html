@@ -31,6 +31,12 @@
     h2 { color: #b82068; font-size: clamp(30px, 5vw, 46px); margin: 56px 0 26px; }
     .day-plan { background: #f6ed70; padding: 28px 32px; border-radius: 3px 18px 5px 14px; box-shadow: 7px 7px 0 #eb91b3; }
     .day-plan h2 { margin: 0 0 20px; }
+    .schedule-note { font-family: "Trebuchet MS", sans-serif; font-size: 0.48em; font-weight: 300; display: inline-block; }
+    .font-options { margin-top: 64px; border-top: 2px solid #638448; }
+    .font-sample { padding: 24px 0; border-bottom: 1px solid #63844855; }
+    .font-label { margin: 0 0 8px; font: 14px "Trebuchet MS", sans-serif; }
+    .font-preview { color: #b82068; font-size: clamp(28px, 5vw, 40px); line-height: 1.3; margin: 0 0 8px; }
+    .font-body { font-size: 18px; margin: 0; }
     .schedule { list-style: none; margin: 0; padding: 0; }
     .schedule li { display: flex; gap: 24px; padding: 14px 0; border-bottom: 1px solid #28552e40; font-size: 20px; }
     .schedule li:last-child { border: 0; }
@@ -70,14 +76,14 @@
         <img class="invitation-house" src="/images/Unknown.jpg" width="582" height="301" alt="Färgstark illustration av huset, omgivet av gröna träd och en trappa genom trädgården">
         <img class="invitation-history" src="/images/tio-ar-sedan.png" width="1024" height="1536" alt="10 år sedan vi gav varandra vårt JA, som är lika levande och sant idag! 5 år fick vi i Sunne där vi byggde på hus och familj. 3 år sedan hamnade vi åter i Örebro. Det var en oväntad vändning i vårt liv. 1 år sedan sparades Jeremis liv i ett kritiskt skede.">
         <div class="invitation-notes">
-          <img src="/images/Unknown-2.jpg" width="268" height="143" alt="Vill vi bjuda in er i vår familj till vårt nya hus att fira livet!">
-          <img src="/images/Unknown-3.jpg" width="219" height="161" alt="Med tacksamhet till allt vi fått, stor respekt för det vi har och tro inför det vi hoppas på.">
+          <img src="/images/fira-livet.png" width="1720" height="914" alt="Vill vi bjuda in er i vår familj till vårt nya hus att fira livet!">
+          <img src="/images/tacksamhet.png" width="1470" height="1070" alt="Med tacksamhet till allt vi fått, stor respekt för det vi har och tro inför det vi hoppas på.">
         </div>
       </div>
     </section>
 
     <section class="day-plan">
-      <h2>Schema – drop-in och drop-out</h2>
+      <h2>Schema <span class="schedule-note">– drop-in och drop-out</span></h2>
       <ul class="schedule">
         <li><span class="time">10:00–16:00</span><span>Arbetsdag</span></li>
         <li><span class="time">16:00–17:00</span><span>Festfix</span></li>
@@ -125,6 +131,80 @@
         <div class="task-images">
           <img src="/images/hundgard-1.svg" alt="Montera ner hundgården – bild 1">
           <div class="task-description"><p>Vi monterar ner hundgården.</p></div>
+        </div>
+      </div>
+    </section>
+    <section class="font-options" aria-labelledby="font-options-title">
+      <h2 id="font-options-title">Välj typsnitt</h2>
+      <p>Jämför tio olika uttryck för sidans rubriker och texter.</p>
+      <div class="font-sample">
+        <p class="font-label">01 · Georgia</p>
+        <div style="font-family: 'Georgia', serif">
+          <p class="font-preview">Arbetsdag &amp; fest</p>
+          <p class="font-body">Vi hjälps åt i trädgården och firar livet. Välkomna på fest och middag!</p>
+        </div>
+      </div>
+      <div class="font-sample">
+        <p class="font-label">02 · Baskerville</p>
+        <div style="font-family: 'Baskerville', serif">
+          <p class="font-preview">Arbetsdag &amp; fest</p>
+          <p class="font-body">Vi hjälps åt i trädgården och firar livet. Välkomna på fest och middag!</p>
+        </div>
+      </div>
+      <div class="font-sample">
+        <p class="font-label">03 · Avenir Next</p>
+        <div style="font-family: 'Avenir Next', serif">
+          <p class="font-preview">Arbetsdag &amp; fest</p>
+          <p class="font-body">Vi hjälps åt i trädgården och firar livet. Välkomna på fest och middag!</p>
+        </div>
+      </div>
+      <div class="font-sample">
+        <p class="font-label">04 · Futura</p>
+        <div style="font-family: 'Futura', serif">
+          <p class="font-preview">Arbetsdag &amp; fest</p>
+          <p class="font-body">Vi hjälps åt i trädgården och firar livet. Välkomna på fest och middag!</p>
+        </div>
+      </div>
+      <div class="font-sample">
+        <p class="font-label">05 · Gill Sans</p>
+        <div style="font-family: 'Gill Sans', serif">
+          <p class="font-preview">Arbetsdag &amp; fest</p>
+          <p class="font-body">Vi hjälps åt i trädgården och firar livet. Välkomna på fest och middag!</p>
+        </div>
+      </div>
+      <div class="font-sample">
+        <p class="font-label">06 · American Typewriter</p>
+        <div style="font-family: 'American Typewriter', serif">
+          <p class="font-preview">Arbetsdag &amp; fest</p>
+          <p class="font-body">Vi hjälps åt i trädgården och firar livet. Välkomna på fest och middag!</p>
+        </div>
+      </div>
+      <div class="font-sample">
+        <p class="font-label">07 · Cochin</p>
+        <div style="font-family: 'Cochin', serif">
+          <p class="font-preview">Arbetsdag &amp; fest</p>
+          <p class="font-body">Vi hjälps åt i trädgården och firar livet. Välkomna på fest och middag!</p>
+        </div>
+      </div>
+      <div class="font-sample">
+        <p class="font-label">08 · Palatino</p>
+        <div style="font-family: 'Palatino', serif">
+          <p class="font-preview">Arbetsdag &amp; fest</p>
+          <p class="font-body">Vi hjälps åt i trädgården och firar livet. Välkomna på fest och middag!</p>
+        </div>
+      </div>
+      <div class="font-sample">
+        <p class="font-label">09 · Chalkboard SE</p>
+        <div style="font-family: 'Chalkboard SE', serif">
+          <p class="font-preview">Arbetsdag &amp; fest</p>
+          <p class="font-body">Vi hjälps åt i trädgården och firar livet. Välkomna på fest och middag!</p>
+        </div>
+      </div>
+      <div class="font-sample">
+        <p class="font-label">10 · Bradley Hand</p>
+        <div style="font-family: 'Bradley Hand', serif">
+          <p class="font-preview">Arbetsdag &amp; fest</p>
+          <p class="font-body">Vi hjälps åt i trädgården och firar livet. Välkomna på fest och middag!</p>
         </div>
       </div>
     </section>
