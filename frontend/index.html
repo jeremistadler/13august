@@ -19,6 +19,8 @@
     .invitation { padding-bottom: 36px; }
     .invitation img { display: block; width: 100%; height: auto; }
     .invitation-title { max-width: 780px; margin: 0 auto 28px; transform: rotate(-2deg); }
+    /* Preserve the original artwork; reveal the page around the balloon and paper. */
+    .invitation-title { clip-path: polygon(0% 13%, 83% 13%, 82.8% 10%, 83% 7%, 83.6% 4.4%, 84.5% 2.7%, 85.7% 1.8%, 87% 1.7%, 88.5% 2.2%, 90% 3.5%, 91% 5.7%, 91.7% 8.2%, 91.8% 10.5%, 91.5% 13%, 100% 13%, 100% 96%, 0% 96%); }
     .invitation-collage { display: grid; grid-template-columns: 1.55fr 1fr; gap: 30px; align-items: center; }
     .invitation-house { grid-column: 1; transform: rotate(-2deg); }
     .invitation-history { grid-column: 2; grid-row: 1 / span 2; max-width: 290px; justify-self: center; transform: rotate(2deg); }
