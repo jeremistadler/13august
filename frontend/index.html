@@ -8,132 +8,47 @@
   <link rel="shortcut icon" type="image/png" href="/wedding/apple-touch-icon.png">
   <style>
     * { box-sizing: border-box; }
-
-    body, html {
-      margin: 0;
-      padding: 0;
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Lucida Grande", sans-serif;
-      font-weight: 300;
-      color: #3a352c;
-      background: #f6f3ec;
-      line-height: 1.6;
-    }
-
-    header {
-      position: relative;
-      padding: 16px 24px;
-      text-align: center;
-    }
-
-    .wedding-link {
-      position: absolute;
-      top: 16px;
-      right: 24px;
-      font-size: 14px;
-      color: #8a7f6a;
-      text-decoration: none;
-      border-bottom: 1px solid #cfc6b4;
-      padding-bottom: 1px;
-    }
-
-    .wedding-link:hover {
-      color: #3a352c;
-      border-bottom-color: #3a352c;
-    }
-
-    main {
-      max-width: 820px;
-      margin: 0 auto;
-      padding: 0 20px 80px;
-    }
-
-    h1 {
-      font-family: Georgia, "Times New Roman", serif;
-      font-weight: 400;
-      font-size: 40px;
-      text-align: center;
-      margin: 40px 0 8px;
-    }
-
-    .subtitle {
-      text-align: center;
-      color: #8a7f6a;
-      margin: 0 0 48px;
-    }
-
-    h2 {
-      font-family: Georgia, "Times New Roman", serif;
-      font-weight: 400;
-      font-size: 28px;
-      margin: 64px 0 20px;
-      border-bottom: 1px solid #ddd5c4;
-      padding-bottom: 8px;
-    }
-
-    .invitation img {
-      width: 100%;
-      height: auto;
-      display: block;
-      border: 12px solid white;
-      box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
-    }
-
-    .schedule {
-      list-style: none;
-      margin: 0;
-      padding: 0;
-    }
-
-    .schedule li {
-      display: flex;
-      gap: 20px;
-      padding: 14px 0;
-      border-bottom: 1px solid #eee8da;
-      font-size: 18px;
-    }
-
-    .schedule .time {
-      flex: 0 0 130px;
-      font-variant-numeric: tabular-nums;
-      color: #8a7f6a;
-      white-space: nowrap;
-    }
-
-    .task {
-      background: white;
-      border: 1px solid #e6dfd0;
-      border-radius: 6px;
-      padding: 20px;
-      margin-bottom: 28px;
-    }
-
-    .task h3 {
-      font-family: Georgia, "Times New Roman", serif;
-      font-weight: 400;
-      font-size: 22px;
-      margin: 0 0 14px;
-    }
-
-    .task-images {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 12px;
-    }
-
-    .task-images.single {
-      grid-template-columns: 1fr;
-    }
-
-    .task-images img {
-      width: 100%;
-      height: auto;
-      display: block;
-      border-radius: 4px;
-    }
-
-    @media only screen and (max-width: 520px) {
-      h1 { font-size: 30px; }
+    html { background: #fff3f3; }
+    body { margin: 0; color: #28552e; font-family: "Trebuchet MS", sans-serif; line-height: 1.6; background: radial-gradient(ellipse at top left, #ffe3ed, transparent 65%), #fff6ee; }
+    header { max-width: 1000px; margin: auto; padding: 18px 24px; text-align: right; }
+    a { color: #28552e; text-underline-offset: 5px; }
+    a:focus-visible { outline: 3px solid #b82068; outline-offset: 5px; }
+    .wedding-link { font-size: 14px; }
+    main { max-width: 1000px; margin: auto; padding: 12px 28px 80px; }
+    .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
+    .invitation { padding-bottom: 36px; }
+    .invitation img { display: block; width: 100%; height: auto; }
+    .invitation-title { max-width: 780px; margin: 0 auto 28px; transform: rotate(-2deg); }
+    .invitation-collage { display: grid; grid-template-columns: 1.55fr 1fr; gap: 30px; align-items: center; }
+    .invitation-house { grid-column: 1; box-shadow: 9px 10px 0 #e4df56; transform: rotate(-2deg); }
+    .invitation-history { grid-column: 2; grid-row: 1 / span 2; max-width: 290px; justify-self: center; transform: rotate(2deg); }
+    .invitation-notes { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; align-items: center; }
+    .invitation-notes img:first-child { transform: rotate(2deg); }
+    .invitation-notes img:last-child { transform: rotate(-3deg); }
+    h2, h3 { font-family: Georgia, "Times New Roman", serif; line-height: 1.2; }
+    h2 { color: #b82068; font-size: clamp(30px, 5vw, 46px); margin: 56px 0 26px; }
+    .day-plan { background: #f6ed70; padding: 28px 32px; border-radius: 3px 18px 5px 14px; box-shadow: 7px 7px 0 #eb91b3; }
+    .day-plan h2 { margin: 0 0 20px; }
+    .schedule { list-style: none; margin: 0; padding: 0; }
+    .schedule li { display: flex; gap: 24px; padding: 14px 0; border-bottom: 1px solid #28552e40; font-size: 20px; }
+    .schedule li:last-child { border: 0; }
+    .time { flex: 0 0 140px; font-weight: bold; font-variant-numeric: tabular-nums; }
+    .task { background: #fffdf5; border: 2px solid #638448; border-radius: 3px 16px 5px 12px; padding: 24px; margin-bottom: 30px; box-shadow: 6px 6px 0 #d6db79; }
+    .task:nth-of-type(even) { background: #ffe5ef; border-color: #b82068; box-shadow: 6px 6px 0 #eeabcb; }
+    .task h3 { font-size: 27px; margin: 0 0 20px; }
+    .task-images { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    .task-images img { display: block; width: 100%; height: auto; border-radius: 3px; }
+    @media (max-width: 600px) {
+      main { padding: 8px 20px 56px; }
+      .invitation-title { margin-bottom: 24px; }
+      .invitation-collage { grid-template-columns: 1fr; gap: 28px; }
+      .invitation-house, .invitation-history { grid-column: auto; grid-row: auto; }
+      .invitation-history { max-width: 250px; order: 2; }
+      .invitation-notes { gap: 14px; }
+      .day-plan { padding: 24px 20px; }
       .schedule li { flex-direction: column; gap: 2px; }
+      .time { flex-basis: auto; }
+      .task { padding: 18px; }
       .task-images { grid-template-columns: 1fr; }
     }
   </style>
@@ -144,15 +59,20 @@
   </header>
 
   <main>
-    <h1>Arbetsdag &amp; fest</h1>
-    <p class="subtitle">Välkomna – här hittar ni allt ni behöver veta inför dagen.</p>
-
-    <section class="invitation">
-      <h2>Inbjudan</h2>
-      <img src="/images/inbjudan.svg" alt="Bild på inbjudan – kommer snart">
+    <h1 class="sr-only">Arbetsdag &amp; fest</h1>
+    <section class="invitation" aria-label="Inbjudan till arbetsdag och fest">
+      <img class="invitation-title" src="/images/Unknown-5.jpg" width="912" height="582" alt="Arbetsdag &amp; Fest">
+      <div class="invitation-collage">
+        <img class="invitation-house" src="/images/Unknown.jpg" width="582" height="301" alt="Färgstark illustration av huset, omgivet av gröna träd och en trappa genom trädgården">
+        <img class="invitation-history" src="/images/Unknown-4.jpg" width="218" height="336" alt="10 år sedan vi gav varandra vårt JA, som är lika levande och sant idag! 5 år fick vi i Sunne där vi byggde på hus och familj. 3 år sedan hamnade vi åter i Örebro. Det var en oväntad vändning i vårt liv. 1 år sedan sparades Jeremis liv i ett kritiskt skede.">
+        <div class="invitation-notes">
+          <img src="/images/Unknown-2.jpg" width="268" height="143" alt="Vill vi bjuda in er i vår familj till vårt nya hus att fira livet!">
+          <img src="/images/Unknown-3.jpg" width="219" height="161" alt="Med tacksamhet till allt vi fått, stor respekt för det vi har och tro inför det vi hoppas på.">
+        </div>
+      </div>
     </section>
 
-    <section>
+    <section class="day-plan">
       <h2>Schema</h2>
       <ul class="schedule">
         <li><span class="time">10:00–16:00</span><span>Arbetsdag</span></li>
