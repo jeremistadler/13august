@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="sv">
+<head>
+  <meta charset="utf-8">
+  <title>Arbetsdag &amp; fest</title>
+  <meta name="description" content="Arbetsdag och fest – schema och uppgifter">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="shortcut icon" type="image/png" href="/wedding/apple-touch-icon.png">
+  <style>
+    * { box-sizing: border-box; }
+    html { background: #dceffa; }
+    body { margin: 0; color: #28552e; font-family: "Gill Sans", sans-serif; line-height: 1.6; background: #dceffa; }
+    header { max-width: 1000px; margin: auto; padding: 18px 24px; text-align: right; }
+    a { color: #28552e; text-underline-offset: 5px; }
+    a:focus-visible { outline: 3px solid #b82068; outline-offset: 5px; }
+    .wedding-link { font-size: 14px; }
+    main { max-width: 1000px; margin: auto; padding: 12px 28px 80px; }
+    .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
+    .invitation { padding-bottom: 36px; }
+    .invitation img { display: block; width: 100%; height: auto; }
+    .invitation-title { max-width: 780px; margin: 0 auto 28px; transform: rotate(-2deg); }
+    /* Preserve the original artwork; reveal the page around the balloon and paper. */
+    .invitation-title { clip-path: polygon(0% 13%, 83% 13%, 82.8% 10%, 83% 7%, 83.6% 4.4%, 84.5% 2.7%, 85.7% 1.8%, 87% 1.7%, 88.5% 2.2%, 90% 3.5%, 91% 5.7%, 91.7% 8.2%, 91.8% 10.5%, 91.5% 13%, 100% 13%, 100% 96%, 0% 96%); }
+    .invitation-collage { display: grid; grid-template-columns: 1.55fr 1fr; gap: 30px; align-items: center; }
+    .invitation-house { grid-column: 1; transform: rotate(-2deg); }
+    .invitation-history { grid-column: 2; grid-row: 1 / span 2; max-width: 290px; justify-self: center; transform: rotate(2deg); }
+    .invitation-notes { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; align-items: center; }
+    .invitation-notes img:first-child { transform: rotate(2deg); }
+    .invitation-notes img:last-child { transform: rotate(-3deg); }
+    h2, h3 { color: #e21919; font-family: "Gill Sans", sans-serif; font-weight: 500; text-transform: uppercase; letter-spacing: 0.035em; line-height: 1.2; }
+    h2 { color: #e21919; font-size: clamp(30px, 5vw, 46px); margin: 56px 0 26px; }
+    .day-plan { background: #f6ed70; padding: 28px 32px; border-radius: 3px 18px 5px 14px; box-shadow: 7px 7px 0 #eb91b3; }
+    .day-plan h2 { margin: 0 0 20px; }
+    .schedule-note { text-transform: none; letter-spacing: normal; font-family: "Gill Sans", sans-serif; font-size: 0.48em; font-weight: 300; display: inline-block; }
+    .schedule { list-style: none; margin: 0; padding: 0; }
+    .schedule li { display: flex; gap: 24px; padding: 14px 0; border-bottom: 1px solid #28552e40; font-size: 20px; }
+    .schedule li:last-child { border: 0; }
+    .time { flex: 0 0 140px; font-weight: bold; font-variant-numeric: tabular-nums; }
+    .task { background: #fffdf5; border: 2px solid #638448; border-radius: 3px 16px 5px 12px; padding: 24px; margin-bottom: 30px; box-shadow: 6px 6px 0 #d6db79; }
+    .task:nth-of-type(even) { background: #ffe5ef; border-color: #b82068; box-shadow: 6px 6px 0 #eeabcb; }
+    .task h3 { font-size: 27px; margin: 0 0 20px; }
+    .task-images { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    .task-description { padding: 22px; background: #f6ed7040; border: 1px dashed #638448; border-radius: 4px; font-size: 18px; }
+    .task-description p { margin: 0; }
+    .task-images img { display: block; width: 100%; aspect-ratio: 1 / 1; object-fit: cover; border-radius: 3px; }
+    @media (max-width: 600px) {
+      main { padding: 8px 20px 56px; }
+      .invitation-title { margin-bottom: 24px; }
+      .invitation-collage { grid-template-columns: 1fr; gap: 28px; }
+      .invitation-house, .invitation-history { grid-column: auto; grid-row: auto; }
+      .invitation-history { max-width: 250px; order: 2; }
+      .invitation-notes { gap: 14px; }
+      .day-plan { padding: 24px 20px; }
+      .schedule li { flex-direction: column; gap: 2px; }
+      .time { flex-basis: auto; }
+      .task { padding: 18px; }
+      .task-images { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <a class="wedding-link" href="/wedding/">Till bröllopssidan</a>
+  </header>
+
+  <main>
+    <h1 class="sr-only">Arbetsdag &amp; fest</h1>
+    <section class="invitation" aria-label="Inbjudan till arbetsdag och fest">
+      <img class="invitation-title" src="/images/Unknown-5.jpg" width="912" height="582" alt="Arbetsdag &amp; Fest">
+      <div class="invitation-collage">
+        <img class="invitation-house" src="/images/Unknown.jpg" width="582" height="301" alt="Färgstark illustration av huset, omgivet av gröna träd och en trappa genom trädgården">
+        <img class="invitation-history" src="/images/tio-ar-sedan.png" width="1024" height="1536" alt="10 år sedan vi gav varandra vårt JA, som är lika levande och sant idag! 5 år fick vi i Sunne där vi byggde på hus och familj. 3 år sedan hamnade vi åter i Örebro. Det var en oväntad vändning i vårt liv. 1 år sedan sparades Jeremis liv i ett kritiskt skede.">
+        <div class="invitation-notes">
+          <img src="/images/fira-livet.png" width="1720" height="914" alt="Vill vi bjuda in er i vår familj till vårt nya hus att fira livet!">
+          <img src="/images/tacksamhet.png" width="1470" height="1070" alt="Med tacksamhet till allt vi fått, stor respekt för det vi har och tro inför det vi hoppas på.">
+        </div>
+      </div>
+    </section>
+
+    <section class="day-plan">
+      <h2>Schema <span class="schedule-note">– drop-in och drop-out</span></h2>
+      <ul class="schedule">
+        <li><span class="time">10:00–16:00</span><span>Arbetsdag</span></li>
+        <li><span class="time">16:00–17:00</span><span>Festfix</span></li>
+        <li><span class="time">17:00</span><span>Fest och middag</span></li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Uppgifter för arbetsdagen</h2>
+
+      <div class="task">
+        <h3>Beskära buskar</h3>
+        <div class="task-images">
+          <img src="/images/beskara-buskar-1.svg" alt="Beskära buskar – bild 1">
+          <div class="task-description"><p>Vi hjälps åt att beskära buskarna.</p></div>
+        </div>
+      </div>
+
+      <div class="task">
+        <h3>Beskära träd</h3>
+        <div class="task-images">
+          <img src="/images/beskara-trad-1.svg" alt="Beskära träd – bild 1">
+          <div class="task-description"><p>Vi hjälps åt att beskära träden.</p></div>
+        </div>
+      </div>
+
+      <div class="task">
+        <h3>Måla ladans vägg med falu rödfärg</h3>
+        <div class="task-images">
+          <img src="/images/mala-ladan-1.svg" alt="Måla ladan – bild 1">
+          <div class="task-description"><p>Vi målar ladans vägg med falu rödfärg.</p></div>
+        </div>
+      </div>
+
+      <div class="task">
+        <h3>Bygga trätrappa till gäststugan</h3>
+        <div class="task-images">
+          <img src="/images/tra-trappa-1.svg" alt="Trätrappa till gäststugan – bild 1">
+          <div class="task-description"><p>Vi bygger en trätrappa till gäststugan.</p></div>
+        </div>
+      </div>
+
+      <div class="task">
+        <h3>Montera ner hundgården</h3>
+        <div class="task-images">
+          <img src="/images/hundgard-1.svg" alt="Montera ner hundgården – bild 1">
+          <div class="task-description"><p>Vi monterar ner hundgården.</p></div>
+        </div>
+      </div>
+    </section>
+  </main>
+</body>
+</html>
