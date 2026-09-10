@@ -9,7 +9,7 @@
   <style>
     * { box-sizing: border-box; }
     html { background: #dceffa; }
-    body { margin: 0; color: #28552e; font-family: "Trebuchet MS", sans-serif; line-height: 1.6; background: #dceffa; }
+    body { margin: 0; color: #28552e; font-family: "Gill Sans", sans-serif; line-height: 1.6; background: #dceffa; }
     header { max-width: 1000px; margin: auto; padding: 18px 24px; text-align: right; }
     a { color: #28552e; text-underline-offset: 5px; }
     a:focus-visible { outline: 3px solid #b82068; outline-offset: 5px; }
@@ -27,11 +27,11 @@
     .invitation-notes { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; align-items: center; }
     .invitation-notes img:first-child { transform: rotate(2deg); }
     .invitation-notes img:last-child { transform: rotate(-3deg); }
-    h2, h3 { color: #e21919; font-family: Georgia, "Times New Roman", serif; line-height: 1.2; }
+    h2, h3 { color: #e21919; font-family: "Gill Sans", sans-serif; font-weight: 500; text-transform: uppercase; letter-spacing: 0.035em; line-height: 1.2; }
     h2 { color: #e21919; font-size: clamp(30px, 5vw, 46px); margin: 56px 0 26px; }
     .day-plan { background: #f6ed70; padding: 28px 32px; border-radius: 3px 18px 5px 14px; box-shadow: 7px 7px 0 #eb91b3; }
     .day-plan h2 { margin: 0 0 20px; }
-    .schedule-note { font-family: "Trebuchet MS", sans-serif; font-size: 0.48em; font-weight: 300; display: inline-block; }
+    .schedule-note { text-transform: none; letter-spacing: normal; font-family: "Gill Sans", sans-serif; font-size: 0.48em; font-weight: 300; display: inline-block; }
     .font-options { margin-top: 64px; border-top: 2px solid #638448; }
     .font-sample { padding: 24px 0; border-bottom: 1px solid #63844855; }
     .font-label { margin: 0 0 8px; font: 14px "Trebuchet MS", sans-serif; }
@@ -135,74 +135,60 @@
       </div>
     </section>
     <section class="font-options" aria-labelledby="font-options-title">
-      <h2 id="font-options-title">Välj typsnitt</h2>
-      <p>Jämför tio typsnitt med rubriker i stora bokstäver.</p>
+      <h2 id="font-options-title">Handskrivna typsnitt</h2>
+      <p>Jämför handskrivna alternativ i stora bokstäver och vanlig text.</p>
       <div class="font-sample">
-        <p class="font-label">01 · Georgia</p>
-        <div style="font-family: 'Georgia', serif">
+        <p class="font-label">01 · Bradley Hand</p>
+        <div style="font-family: 'Bradley Hand', cursive">
           <p class="font-preview">Arbetsdag &amp; fest</p>
           <p class="font-body">Vi hjälps åt i trädgården och firar livet. Välkomna på fest och middag!</p>
         </div>
       </div>
       <div class="font-sample">
-        <p class="font-label">02 · Baskerville</p>
-        <div style="font-family: 'Baskerville', serif">
+        <p class="font-label">02 · Chalkboard SE</p>
+        <div style="font-family: 'Chalkboard SE', cursive">
           <p class="font-preview">Arbetsdag &amp; fest</p>
           <p class="font-body">Vi hjälps åt i trädgården och firar livet. Välkomna på fest och middag!</p>
         </div>
       </div>
       <div class="font-sample">
-        <p class="font-label">03 · Avenir Next</p>
-        <div style="font-family: 'Avenir Next', serif">
+        <p class="font-label">03 · Comic Sans MS</p>
+        <div style="font-family: 'Comic Sans MS', cursive">
           <p class="font-preview">Arbetsdag &amp; fest</p>
           <p class="font-body">Vi hjälps åt i trädgården och firar livet. Välkomna på fest och middag!</p>
         </div>
       </div>
       <div class="font-sample">
-        <p class="font-label">04 · Futura</p>
-        <div style="font-family: 'Futura', serif">
+        <p class="font-label">04 · Apple Chancery</p>
+        <div style="font-family: 'Apple Chancery', cursive">
           <p class="font-preview">Arbetsdag &amp; fest</p>
           <p class="font-body">Vi hjälps åt i trädgården och firar livet. Välkomna på fest och middag!</p>
         </div>
       </div>
       <div class="font-sample">
-        <p class="font-label">05 · Gill Sans</p>
-        <div style="font-family: 'Gill Sans', serif">
+        <p class="font-label">05 · Noteworthy</p>
+        <div style="font-family: 'Noteworthy', cursive">
           <p class="font-preview">Arbetsdag &amp; fest</p>
           <p class="font-body">Vi hjälps åt i trädgården och firar livet. Välkomna på fest och middag!</p>
         </div>
       </div>
       <div class="font-sample">
-        <p class="font-label">06 · American Typewriter</p>
-        <div style="font-family: 'American Typewriter', serif">
+        <p class="font-label">06 · Marker Felt</p>
+        <div style="font-family: 'Marker Felt', cursive">
           <p class="font-preview">Arbetsdag &amp; fest</p>
           <p class="font-body">Vi hjälps åt i trädgården och firar livet. Välkomna på fest och middag!</p>
         </div>
       </div>
       <div class="font-sample">
-        <p class="font-label">07 · Cochin</p>
-        <div style="font-family: 'Cochin', serif">
+        <p class="font-label">07 · Chalkduster</p>
+        <div style="font-family: 'Chalkduster', cursive">
           <p class="font-preview">Arbetsdag &amp; fest</p>
           <p class="font-body">Vi hjälps åt i trädgården och firar livet. Välkomna på fest och middag!</p>
         </div>
       </div>
       <div class="font-sample">
-        <p class="font-label">08 · Palatino</p>
-        <div style="font-family: 'Palatino', serif">
-          <p class="font-preview">Arbetsdag &amp; fest</p>
-          <p class="font-body">Vi hjälps åt i trädgården och firar livet. Välkomna på fest och middag!</p>
-        </div>
-      </div>
-      <div class="font-sample">
-        <p class="font-label">09 · Chalkboard SE</p>
-        <div style="font-family: 'Chalkboard SE', serif">
-          <p class="font-preview">Arbetsdag &amp; fest</p>
-          <p class="font-body">Vi hjälps åt i trädgården och firar livet. Välkomna på fest och middag!</p>
-        </div>
-      </div>
-      <div class="font-sample">
-        <p class="font-label">10 · Bradley Hand</p>
-        <div style="font-family: 'Bradley Hand', serif">
+        <p class="font-label">08 · Snell Roundhand</p>
+        <div style="font-family: 'Snell Roundhand', cursive">
           <p class="font-preview">Arbetsdag &amp; fest</p>
           <p class="font-body">Vi hjälps åt i trädgården och firar livet. Välkomna på fest och middag!</p>
         </div>
