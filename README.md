@@ -27,6 +27,8 @@ Cookies identifierar webbläsaren, inte en fysisk person. Rensade cookies eller 
 
 ## Cloudflare
 
+`main` är huvudgren. Cloudflare Workers Builds bygger automatiskt vid push till `main` i `jeremistadler/13august`. Byggkommandot är `npm run build`; publiceringskommandot är `npx wrangler d1 migrations apply DB --remote && npx wrangler deploy`. Migrationer körs före publicering, och ett misslyckat steg avbryter körningen. Övriga grenar publiceras inte av denna koppling. Hemligheter finns kvar i Cloudflare och ska inte checkas in.
+
 Konfigurationen använder Jeremis personliga Cloudflare-konto. Både `https://www.13augusti.se` och `https://13augusti.se` går till den nya webbplatsen genom Worker-routes i `wrangler.jsonc`. Allt innehåll och API hanteras av Workern och Workers Static Assets. DNS-posterna för både roten och `www` är proxade A-poster till `192.0.2.0` (TTL Auto), Cloudflares reserverade adress för drift utan ursprungsserver. Worker-routes tar hand om alla anrop; inga DNS-poster pekar på GitHub Pages. Behåll posterna proxade och båda Worker-routes aktiva. `https://arbetsdag-fest.jeremi.workers.dev` finns också kvar.
 
 Databasmigrationerna finns i `migrations/`. Alla måste köras innan den här versionen driftsätts:
