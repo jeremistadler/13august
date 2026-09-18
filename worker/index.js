@@ -1,4 +1,5 @@
 import { admin } from './admin.js';
+import { notifyNewSubmission } from './sms.js';
 
 const COOKIE = 'arbetsdag_session';
 const TEST_SITEKEY = '1x00000000000000000000BB';
@@ -50,7 +51,7 @@ export function validateAnswers(body) {
 }
 
 export default {
-  async fetch(request, env) {
+  async fetch(request, env, ctx) {
     const url = new URL(request.url);
     if (url.pathname === '/admin' || url.pathname.startsWith('/admin/')) return admin(request, env);
     if (!url.pathname.startsWith('/api/')) return env.ASSETS.fetch(request);
@@ -105,14 +106,18 @@ export default {
       const testing = config.local && config.secret === TEST_SECRET;
       if (!result.success || (!testing && (result.hostname !== url.hostname || result.action !== 'rsvp'))) return json({ error: 'Säkerhetskontrollen misslyckades. Försök igen.' }, 403);
 
-      await env.DB.prepare(`INSERT INTO responses (session_hash, attending, companions, needs_bed, comment, phone, name, bed_stay, brings_food, food_note)
+      const values = [await hash(token), Number(answers.interest), answers.companions, Number(answers.bed), answers.comment, answers.phone, answers.name, answers.bedStay, Number(answers.bringsFood), answers.foodNote];
+      // Only the request that inserts a new session sends notifications, even on retries.
+      const inserted = await env.DB.prepare(`INSERT INTO responses (session_hash, attending, companions, needs_bed, comment, phone, name, bed_stay, brings_food, food_note)
         VALUES (?1, ?2, ?3, ?4, ?5, ?6, ?7, ?8, ?9, ?10)
-        ON CONFLICT(session_hash) DO UPDATE SET attending = excluded.attending,
-          companions = excluded.companions, needs_bed = excluded.needs_bed, bed_stay = excluded.bed_stay,
-          comment = excluded.comment, phone = excluded.phone, name = excluded.name,
-          brings_food = excluded.brings_food, food_note = excluded.food_note,
-          updated_at = strftime('%Y-%m-%dT%H:%M:%fZ', 'now')`)
-        .bind(await hash(token), Number(answers.interest), answers.companions, Number(answers.bed), answers.comment, answers.phone, answers.name, answers.bedStay, Number(answers.bringsFood), answers.foodNote).run();
+        ON CONFLICT(session_hash) DO NOTHING RETURNING session_hash`).bind(...values).first();
+      if (!inserted) {
+        await env.DB.prepare(`UPDATE responses SET attending = ?2, companions = ?3, needs_bed = ?4,
+          comment = ?5, phone = ?6, name = ?7, bed_stay = ?8, brings_food = ?9, food_note = ?10,
+          updated_at = strftime('%Y-%m-%dT%H:%M:%fZ', 'now') WHERE session_hash = ?1`).bind(...values).run();
+      } else if (!config.local) {
+        ctx.waitUntil(notifyNewSubmission(env, answers));
+      }
       return json({ answers, submitted: true });
     } catch {
       return json({ error: 'Svaret kunde inte bekräftas. Försök igen; samma anmälan uppdateras om den redan har sparats.' }, 503);

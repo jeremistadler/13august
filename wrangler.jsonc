@@ -5,6 +5,7 @@
 	"main": "worker/index.js",
 	"compatibility_date": "2026-09-18",
 	"workers_dev": true,
+	"observability": { "enabled": true, "traces": { "enabled": true } },
 	"routes": [
 		{ "pattern": "www.13augusti.se/*", "zone_name": "13augusti.se" },
 		{ "pattern": "13augusti.se/*", "zone_name": "13augusti.se" }
