@@ -1,0 +1,30 @@
+{
+	"$schema": "node_modules/wrangler/config-schema.json",
+	"name": "arbetsdag-fest",
+	"account_id": "71b746635051545ad66a96846ea64800",
+	"main": "worker/index.js",
+	"compatibility_date": "2026-09-18",
+	"workers_dev": true,
+	"routes": [
+		{ "pattern": "www.13augusti.se/*", "zone_name": "13augusti.se" },
+		{ "pattern": "13augusti.se/*", "zone_name": "13augusti.se" }
+	],
+	"vars": { "TURNSTILE_SITE_KEY": "0x4AAAAAAE8EY0lZcZ8mvEnV" },
+	"assets": {
+		"directory": "./dist",
+		"binding": "ASSETS",
+		"run_worker_first": [
+			"/api/*",
+			"/admin",
+			"/admin/*"
+		]
+	},
+	"d1_databases": [
+		{
+			"binding": "DB",
+			"database_name": "arbetsdag-fest",
+			"database_id": "e61f7b2b-2bce-48f3-ae17-7d2e5617c13d",
+			"migrations_dir": "migrations"
+		}
+	]
+}

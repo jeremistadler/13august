@@ -1,0 +1,2 @@
+ALTER TABLE responses ADD COLUMN brings_food INTEGER NOT NULL DEFAULT 0 CHECK (brings_food IN (0, 1));
+ALTER TABLE responses ADD COLUMN food_note TEXT NOT NULL DEFAULT '';
