@@ -46,6 +46,7 @@
     h2 { color: #e21919; font-size: clamp(30px, 5vw, 46px); margin: 56px 0 26px; }
     .day-plan { background: #f6ed70; padding: 28px 32px; border-radius: 0; box-shadow: 7px 7px 0 #eb91b3; }
     .day-plan h2 { margin: 0 0 20px; }
+    .schedule-date { margin: 0 0 12px; color: #e21919; font-size: clamp(24px, 4vw, 34px); font-weight: 500; line-height: 1.2; }
     .schedule-note { text-transform: none; letter-spacing: normal; font-family: "Gill Sans", sans-serif; font-size: 0.48em; font-weight: 700; display: inline-block; }
     .schedule-welcome { margin: -8px 0 20px; color: #e21919; font-family: "Gill Sans", sans-serif; font-size: clamp(14.4px, 2.4vw, 22.08px); font-weight: 300; font-style: italic; line-height: 1.5; }
     .schedule { list-style: none; margin: 0; padding: 0; }
