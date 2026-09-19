@@ -1,18 +1,23 @@
 const recipients = ['+46765699961', '+46727131477'];
 
-function short(value, limit) {
+function short(value) {
   const text = String(value || '').replace(/\s+/g, ' ').trim();
-  return text.length > limit ? `${text.slice(0, limit - 3)}...` : text;
+  const characters = Array.from(text);
+  return characters.length > 60 ? `${characters.slice(0, 57).join('')}...` : text;
 }
 
 export function summary(answers) {
   const nights = { 'fri-sat': 'fre-lör', 'sat-sun': 'lör-sön', 'fri-sun': 'fre-sön' };
   return [
-    `Ny anmälan: ${short(answers.name, 50)}`,
+    `Ny anmälan: ${short(answers.name)}`,
     `Kommer: ${answers.interest ? 'Ja' : 'Nej'}`,
-    answers.companions && 'Medföljande: se admin',
-    `Sängplats: ${answers.bed ? nights[answers.bedStay] : 'Nej'}`,
+    `Medföljande: ${short(answers.companions) || '-'}`,
+    `Telefon: ${short(answers.phone) || '-'}`,
+    `Sängplats: ${answers.bed ? 'Ja' : 'Nej'}`,
+    answers.bed && `Nätter: ${nights[answers.bedStay] || '-'}`,
     `Tar med mat: ${answers.bringsFood ? 'Ja' : 'Nej'}`,
+    answers.bringsFood && `Mat: ${short(answers.foodNote) || '-'}`,
+    `Kommentar: ${short(answers.comment) || '-'}`,
     'Alla svar: https://www.13augusti.se/admin',
   ].filter(Boolean).join('\n');
 }
